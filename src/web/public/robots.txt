@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /p/
+Disallow: /admin
+Disallow: /settings
+Disallow: /register
+Disallow: /login
+Disallow: /api/
+Allow: /api/public/
+Allow: /share/

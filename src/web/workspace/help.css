@@ -1,0 +1,320 @@
+/* ---------- 使い方（ヘルプ）のページ ---------- */
+.help {
+  line-height: 1.75;
+}
+.help > h1 {
+  margin-bottom: 10px;
+}
+.help p {
+  margin: 0 0 10px;
+}
+.help ul,
+.help ol {
+  margin: 0 0 12px;
+  padding-left: 1.4em;
+}
+.help li + li {
+  margin-top: 4px;
+}
+.help strong {
+  color: var(--text-strong);
+  font-weight: 600;
+}
+.help a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.help a:hover {
+  text-decoration: underline;
+}
+.help-lead {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+.help-small {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* 目次 */
+.help-toc {
+  margin: 24px 0 8px;
+  padding: 16px 18px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.help-toc-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.help .help-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 16px;
+}
+.help .help-toc li {
+  margin: 0;
+  min-width: 0;
+}
+.help .help-toc a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  margin: 0 -8px;
+  border-radius: var(--radius);
+  color: var(--text);
+  line-height: 1.45;
+}
+.help .help-toc a:hover {
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.help-toc a .ui-icon {
+  flex: none;
+  color: var(--text-muted);
+}
+
+/* 各項目 */
+.help-section {
+  padding-top: 36px;
+  scroll-margin-top: 12px;
+}
+.help-section + .help-section {
+  border-top: 1px solid var(--border);
+  margin-top: 28px;
+}
+.help-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+.help-section-icon {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.help-section h3 {
+  font-size: 15px;
+  margin: 20px 0 6px;
+}
+.help-section h2 + h3 {
+  margin-top: 4px;
+}
+
+/* 順番のある手順 */
+.help .help-steps {
+  counter-reset: help-step;
+  list-style: none;
+  padding-left: 0;
+}
+.help .help-steps > li {
+  counter-increment: help-step;
+  position: relative;
+  padding-left: 32px;
+}
+.help .help-steps > li::before {
+  content: counter(help-step);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bg-active);
+  color: var(--text-strong);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: center;
+}
+
+/* 2 列に並べる短い一覧 */
+.help .help-columns {
+  columns: 2;
+  column-gap: 24px;
+}
+.help .help-columns li {
+  break-inside: avoid;
+}
+
+/* 補足 */
+.help-note {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+  padding: 10px 14px;
+  background: var(--accent-soft);
+  border-radius: 8px;
+  font-size: 13.5px;
+}
+.help-note > .ui-icon {
+  flex: none;
+  margin-top: 3px;
+  color: var(--accent);
+}
+.help-note > div {
+  min-width: 0;
+}
+
+/* キーと記法 */
+.help kbd {
+  display: inline-block;
+  margin: 0;
+  padding: 0 6px;
+  min-width: 1.6em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--text-strong);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  white-space: nowrap;
+  vertical-align: 1px;
+}
+.help-keys {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+}
+.help-keys > span {
+  display: inline-flex;
+  align-items: center;
+}
+.help-keys-plus {
+  margin: 0 3px;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+.help code {
+  color: var(--text-strong);
+  background: var(--bg-hover);
+  overflow-wrap: anywhere;
+}
+
+/* 表（ショートカット・記法） */
+.help-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 4px 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.help-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.help-table td {
+  padding: 7px 12px;
+  vertical-align: middle;
+  border-top: 1px solid var(--border);
+}
+.help-table tr:first-child td {
+  border-top: 0;
+}
+.help-table-key {
+  width: 46%;
+  background: var(--bg-subtle);
+}
+
+/* 対応形式・役割の一覧 */
+.help-formats {
+  margin: 4px 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.help-formats > div {
+  display: grid;
+  grid-template-columns: 9.5em minmax(0, 1fr);
+  gap: 12px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border);
+  font-size: 13.5px;
+}
+.help-formats > div:first-child {
+  border-top: 0;
+}
+.help-formats dt {
+  font-weight: 600;
+  color: var(--text-strong);
+}
+.help-formats dd {
+  margin: 0;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+/* 困ったとき */
+.help-faq {
+  margin: 0;
+}
+.help-faq dt {
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-top: 16px;
+}
+.help-faq dt:first-child {
+  margin-top: 0;
+}
+.help-faq dd {
+  margin: 4px 0 0;
+}
+
+.help-back {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  /* 左上のメニューボタン（固定表示）に見出しが隠れないようにする */
+  .help-section {
+    scroll-margin-top: 56px;
+  }
+  .help .help-toc ol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .help-section h2 {
+    font-size: 18px;
+  }
+  .help-formats > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+  .help-table-key {
+    width: auto;
+  }
+}
+@media (max-width: 480px) {
+  .help .help-columns {
+    columns: 1;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .help .help-toc a {
+    transition: background 0.12s;
+  }
+}

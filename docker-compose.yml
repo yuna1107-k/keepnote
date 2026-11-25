@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATA_DIR: /data
+    volumes:
+      - ./data:/data
+    # リバースプロキシ（Caddy など）から接続する想定でローカルにのみ公開
+    ports:
+      - "127.0.0.1:3000:3000"
